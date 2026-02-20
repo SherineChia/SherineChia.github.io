@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biodata Mahasiswa</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+}
+
+body{
+    background:#0b1d33;
+    color:white;
+}
+
+/* ===== HEADER ===== */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:#112d4e;
+}
+
+.profile-header{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.profile-header img{
+    width:80px;
+    border-radius:40%;
+    border:3px solid gold;
+}
+
+.profile-header h2{
+    color:gold;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+    background:#0f2540;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+    padding:15px 40px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:gold;
+}
+
+/* ===== BERANDA ===== */
+.container{
+    display:flex;
+    gap:40px;
+    padding:40px;
+    flex-wrap:wrap;
+}
+
+.left{
+    flex:1;
+    text-align:center;
+}
+
+.left img{
+    width:260px;
+    border-radius:15px;
+    border:4px solid gold;
+}
+
+.right{
+    flex:2;
+}
+
+.right h1{
+    color:gold;
+    margin-bottom:10px;
+}
+
+/* ===== SECTION UMUM ===== */
+.section{
+    background:#112d4e;
+    margin:30px 40px;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+}
+
+.section h2{
+    color:gold;
+    margin-bottom:20px;
+}
+
+/* ===== DATA DIRI ===== */
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+td{
+    padding:10px;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+/* ===== SKILL ===== */
+.skill{
+    margin-bottom:20px;
+}
+
+.skill span{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:5px;
+}
+
+.progress{
+    background:#0b1d33;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:14px;
+    background:linear-gradient(90deg, gold, #ffd700);
+    width:0;
+    border-radius:20px;
+    transition:width 1.5s ease;
+}
+
+/* ===== BUTTON ===== */
+button{
+    margin-top:25px;
+    padding:10px 30px;
+    background:gold;
+    color:#0b1d33;
+    border:none;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ffd700;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:#112d4e;
+    text-align:center;
+    padding:15px;
+    margin-top:40px;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="profile-header">
+        <img src="foto1.jpeg">
+        <div>
+            <h2>Sherine</h2>
+            <p>Universitas International Batam</p>
+        </div>
+    </div>
+    <div>
+        <p>📧 aerachia777@gmail.com</p>
+        <p>📱 08990938077</p>
+    </div>
+</header>
+
+<nav>
+<ul>
+    <li><a href="#beranda">Beranda</a></li>
+    <li><a href="#profil">Profil</a></li>
+    <li><a href="#skill">Skill</a></li>
+    <li><a href="#data">Data Diri</a></li>
+    <li><a href="#kontak">Kontak</a></li>
+</ul>
+</nav>
+
+<!-- ===== BERANDA ===== -->
+<section id="beranda" class="container">
+    <div class="left">
+        <img src="foto.jpeg">
+    </div>
+    <div class="right">
+        <h1>Hello Guys 👋</h1>
+        <p>“Behind every great technology is a curious mind that never stopped learning.”</p>
+        <button onclick="keKontak()">Hubungi Saya</button>
+    </div>
+</section>
+
+<!-- ===== PROFIL ===== -->
+<section id="profil" class="section">
+    <h2>Profil Singkat</h2>
+    <hr>
+   <p>
+    Saya merupakan mahasiswa aktif di <strong>Universitas International Batam</strong>
+    yang memiliki minat di bidang teknologi informasi khususnya web development dan desain UI/UX. Saya senang belajar hal baru
+        dan mengembangkan kemampuan teknis maupun soft skill.
+</p>
+
+</section>
+
+<!-- ===== SKILL ===== -->
+<section id="skill" class="section">
+    <h2>Skill</h2>
+
+    <div class="skill">
+        <span><b>HTML</b><b>55%</b></span>
+        <div class="progress">
+            <div class="progress-bar" data-skill="55"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <span><b>CSS</b><b>45%</b></span>
+        <div class="progress">
+            <div class="progress-bar" data-skill="45"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <span><b>JavaScript</b><b>45%</b></span>
+        <div class="progress">
+            <div class="progress-bar" data-skill="45"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <span><b>UI/UX Design</b><b>55%</b></span>
+        <div class="progress">
+            <div class="progress-bar" data-skill="55"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== DATA DIRI ===== -->
+<section id="data" class="section">
+    <h2>Data Diri</h2>
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Informasi Mahasiswa</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>NPM</td><td>2531182</td></tr>
+        <tr><td>Program Studi</td><td>Sistem Informasi</td></tr>
+        <tr><td>Fakultas</td><td>Ilmu Komputer</td></tr>
+        <tr><td>Universitas</td><td>Universitas International Batam</td></tr>
+        <tr><td>Tempat, Tanggal Lahir</td><td>Batam, 01 Juni 1996</td></tr>
+    </tbody>
+</table>
+
+</section>
+
+<!-- ===== KONTAK ===== -->
+<section id="kontak" class="section">
+    <h2>Kontak</h2>
+    <p>Email : aerachia777@gmail.com</p>
+    <p>Instagram : @blackhood.777</p>
+</section>
+
+<footer>
+    <p><small>© 2026 Biodata Mahasiswa | Dibuat dengan ❤️ oleh Sherine</small></p>
+</footer>
+
+<script>
+function keKontak(){
+    document.getElementById("kontak").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+/* Animasi progress bar */
+window.onload = () => {
+    document.querySelectorAll(".progress-bar").forEach(bar => {
+        bar.style.width = bar.dataset.skill + "%";
+    });
+};
+</script>
+
+</body>
+</html>
