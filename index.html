@@ -1,124 +1,47 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biodata Mahasiswa</title>
+<title>Portfolio Sherine</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Segoe UI", sans-serif;
+
+/* ===== GOLD LUXURY UNTUK HALAMAN 1 ===== */
+
+#homePage{
+    border: 2px solid #d4a373;
+    box-shadow:
+        0 0 20px rgba(212,163,115,0.4),
+        inset 0 0 25px rgba(212,163,115,0.15);
 }
 
-body{
-    background:#0b1d33;
-    color:white;
+.dark #homePage{
+    border: 2px solid #d4a373;
+    box-shadow:
+        0 0 25px rgba(212,163,115,0.6),
+        inset 0 0 30px rgba(212,163,115,0.2);
 }
 
-/* ===== HEADER ===== */
-.header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 40px;
-    background:#112d4e;
-}
+/* ===== SKILL SECTION UPGRADE ===== */
 
-.profile-header{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.profile-header img{
-    width:80px;
-    border-radius:40%;
-    border:3px solid gold;
-}
-
-.profile-header h2{
-    color:gold;
-}
-
-/* ===== NAVBAR ===== */
-nav{
-    background:#0f2540;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:25px;
-    padding:15px 40px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:500;
-}
-
-nav a:hover{
-    color:gold;
-}
-
-/* ===== BERANDA ===== */
-.container{
-    display:flex;
-    gap:40px;
-    padding:40px;
-    flex-wrap:wrap;
-}
-
-.left{
-    flex:1;
-    text-align:center;
-}
-
-.left img{
-    width:140px;
-    border-radius:15px;
-    border:4px solid gold;
-}
-
-.right{
-    flex:2;
-}
-
-.right h1{
-    color:gold;
-    margin-bottom:10px;
-}
-
-/* ===== SECTION UMUM ===== */
-.section{
-    background:#112d4e;
-    margin:30px 40px;
+.skill-section{
+    margin-top:30px;
+    background:white;
     padding:30px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    text-align:left;
 }
 
-.section h2{
-    color:gold;
-    margin-bottom:20px;
+.skill-section h2{
+    text-align:center;
+    margin-bottom:25px;
+    font-size:20px;
+    color:#8b5e3c;
 }
 
-/* ===== DATA DIRI ===== */
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-td{
-    padding:10px;
-    border-bottom:1px solid rgba(255,255,255,0.2);
-}
-
-/* ===== SKILL ===== */
 .skill{
     margin-bottom:20px;
 }
@@ -126,103 +49,449 @@ td{
 .skill span{
     display:flex;
     justify-content:space-between;
-    margin-bottom:5px;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.skill:hover{
+    transform:scale(1.03);
+    transition:0.3s;
 }
 
 .progress{
-    background:#0b1d33;
+    width:100%;
+    height:14px;
+    background:#f0f0f0;
     border-radius:20px;
     overflow:hidden;
+    box-shadow:inset 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .progress-bar{
-    height:14px;
-    background:linear-gradient(90deg, gold, #ffd700);
+    height:100%;
     width:0;
     border-radius:20px;
-    transition:width 1.5s ease;
+    background:linear-gradient(90deg, #8b5e3c, #d4a373);
+    transition:width 1.8s ease-in-out;
+    box-shadow:0 0 8px rgba(212,163,115,0.6);
 }
 
-/* ===== BUTTON ===== */
+.project-section{
+    margin-top:30px;
+}
+
+.project-card{
+    background:white;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    text-align:left;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+.dark #biodataPage{
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    border: 2px solid rgba(212,163,115,0.6);
+}
+
+.dark .table-card,
+.dark .skill-section,
+.dark .project-card{
+    background: linear-gradient(145deg, #2c2c2c, #3a3a3a);
+    box-shadow: 0 0 20px rgba(212,163,115,0.2);
+}
+
+body{
+    background:url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    background-color:#8b5e3c;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+/* CARD STYLE */
+.card{
+    width:90%;
+    max-width:700px;
+    background:#f3d6d6;
+    border-radius:15px;
+    padding:40px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+    text-align:center;
+    position:relative;
+}
+.card{
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.profile-img{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    border:5px solid white;
+    margin-top:-90px;
+    object-fit:cover;
+}
+
+h1{
+    margin-top:15px;
+    font-size:24px;
+}
+
+.subtitle{
+    color:#444;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.description{
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
 button{
-    margin-top:25px;
-    padding:10px 30px;
-    background:gold;
-    color:#0b1d33;
+    padding:10px 25px;
     border:none;
-    border-radius:30px;
-    font-weight:bold;
+    background:#8b5e3c;
+    color:white;
+    border-radius:20px;
     cursor:pointer;
+    transition:0.3s;
 }
 
 button:hover{
-    background:#ffd700;
+    background:#5e3d28;
 }
 
-/* ===== FOOTER ===== */
-footer{
-    background:#112d4e;
-    text-align:center;
-    padding:15px;
-    margin-top:40px;
-    font-size:14px;
+.hidden{
+    display:none;
 }
+
+/* Biodata Table */
+.table-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-top:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+td{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+}
+
+td:first-child{
+    font-weight:bold;
+    width:40%;
+}
+
+footer{
+    margin-top:25px;
+    font-size:12px;
+    color:#333;
+}
+
+/* ===== DARK MODE ===== */
+
+.dark-toggle{
+    position:fixed;
+    top:20px;
+    right:20px;
+    padding:10px 12px;
+    border:none;
+    border-radius:50%;
+    background:#8b5e3c;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transition:0.3s;
+    z-index:1000;
+}
+
+.dark-toggle:hover{
+    background:#5e3d28;
+    transform:scale(1.1);
+}
+
+.dark{
+    background:#1e1e1e;
+}
+
+.dark .card{
+    background:#2c2c2c;
+    color:white;
+}
+
+.dark .table-card,
+.dark .skill-section,
+.dark .project-card{
+    background:#3a3a3a;
+    color:white;
+}
+
+.dark td{
+    border-bottom:1px solid #555;
+}
+
+.dark .subtitle{
+    color:#ccc;
+}
+
+.dark footer{
+    color:#aaa;
+}
+
+/* ===== SMOOTH TRANSITION GLOBAL ===== */
+body, .card, .table-card, .skill-section, .project-card, td, footer {
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ===== DARK MODE BUTTON ===== */
+.dark-toggle{
+    position:fixed;
+    top:20px;
+    right:20px;
+    padding:10px 12px;
+    border:none;
+    border-radius:50%;
+    background:#8b5e3c;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transition:0.3s;
+    z-index:1000;
+}
+
+.dark-toggle:hover{
+    transform:scale(1.1);
+}
+
+/* ===== DARK MODE STYLE ===== */
+.dark{
+    background:#1e1e1e !important;
+}
+
+.dark .card{
+    background:#2c2c2c;
+    color:white;
+}
+
+.dark .table-card,
+.dark .skill-section,
+.dark .project-card{
+    background:#3a3a3a;
+    color:white;
+}
+
+.dark td{
+    border-bottom:1px solid #555;
+}
+
+.dark .subtitle{
+    color:#ccc;
+}
+
+.dark footer{
+    color:#aaa;
+}
+
+/* ===== DEKORASI BIODATA ===== */
+
+#biodataPage{
+    position: relative;
+    overflow: hidden;
+}
+
+/* ORNAMEN KIRI */
+#biodataPage::before{
+    content: "";
+    position: absolute;
+    left: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 400px;
+    background: linear-gradient(180deg, #d4a373, #8b5e3c);
+    border-radius: 50%;
+    opacity: 0.2;
+    filter: blur(40px);
+}
+
+/* ORNAMEN KANAN */
+#biodataPage::after{
+    content: "";
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 400px;
+    background: linear-gradient(180deg, #f3d6d6, #d4a373);
+    border-radius: 50%;
+    opacity: 0.2;
+    filter: blur(40px);
+}
+
+/* ===== LUXURY CLASSY FRAME ===== */
+
+#biodataPage{
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(212,163,115,0.5);
+}
+
+/* Gold Border Glow */
+
+#biodataPage{
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #d4a373;
+    box-shadow:
+        0 0 20px rgba(212,163,115,0.4),
+        inset 0 0 25px rgba(212,163,115,0.15);
+}
+
+/* ===== FIX SIDE GLOW ===== */
+
+#biodataPage::after{
+    content: "";
+    position: absolute;
+    right: -180px;   /* geser lebih keluar */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px;    /* lebih kecil */
+    height: 250px;
+    background: radial-gradient(circle, rgba(212,163,115,0.4), transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: -1;     /* pindahkan ke belakang */
+}
+
+#biodataPage{
+    isolation: isolate;
+}
+
+
+#biodataPage .luxury-right{
+    position: absolute;
+    right: -120px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(139,94,60,0.6), transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+
 </style>
 </head>
 
 <body>
 
-<header class="header">
-    <div class="profile-header">
-        <img src="foto1.jpeg">
-        <div>
-            <h2>Sherine</h2>
-            <p>Universitas International Batam</p>
-        </div>
+    <button class="dark-toggle" onclick="toggleDarkMode()">
+    <i id="darkIcon" class="fa-solid fa-moon"></i>
+</button>
+
+<!-- HALAMAN 1 -->
+<div class="card" id="homePage">
+
+    <img src="foto1.jpeg" alt="Foto Profil Sherine" class="profile-img">
+
+    <h1>Sherine</h1>
+
+    <p class="subtitle">Information Systems Student</p>
+
+    <p class="description">
+        Mahasiswa aktif Universitas International Batam 
+        dengan minat di bidang Web Development dan UI/UX Design.
+        Saya senang belajar hal baru dan mengembangkan kemampuan teknologi.
+    </p>
+
+    <button onclick="goToBiodata()">Lihat Biodata</button>
+
+<footer>
+    <p><small>© 2026 Biodata Mahasiswa | Dibuat dengan ❤️ oleh Sherine</small></p>
+</footer>
+
+</div>
+
+<!-- HALAMAN 2 -->
+<div class="card hidden" id="biodataPage">
+<div class="luxury-right"></div>
+
+    <h1>Biodata Diri</h1>
+
+    <div class="table-card">
+        <table>
+            <tbody>
+                <tr>
+                    <td>NPM</td>
+                    <td>2531182</td>
+                </tr>
+                <tr>
+                    <td>Program Studi</td>
+                    <td>Sistem Informasi</td>
+                </tr>
+                <tr>
+                    <td>Fakultas</td>
+                    <td>Ilmu Komputer</td>
+                </tr>
+                <tr>
+                    <td>Universitas</td>
+                    <td>Universitas International Batam</td>
+                </tr>
+                <tr>
+                    <td>Tempat, Tanggal Lahir</td>
+                    <td>Batam, 01 Juni 1996</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>aerachia777@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Instagram</td>
+                    <td>@blackhood.777</td>
+                </tr>
+                <tr>
+                    <td>Facebook</td>
+                    <td>SharonSherine</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <div>
-        <p>📧 aerachia777@gmail.com</p>
-        <p>📱 08990938077</p>
-    </div>
-</header>
+    <!-- ===== SKILL ===== -->
+<section class="skill-section">
 
-<nav>
-<ul>
-    <li><a href="#beranda">Beranda</a></li>
-    <li><a href="#profil">Profil</a></li>
-    <li><a href="#skill">Skill</a></li>
-    <li><a href="#data">Data Diri</a></li>
-    <li><a href="#kontak">Kontak</a></li>
-</ul>
-</nav>
-
-<!-- ===== BERANDA ===== -->
-<section id="beranda" class="container">
-    <div class="left">
-        <img src="foto.jpeg">
-    </div>
-    <div class="right">
-        <h1>Hello Guys 👋</h1>
-        <p>“Behind every great technology is a curious mind that never stopped learning.”</p>
-        <button onclick="keKontak()">Hubungi Saya</button>
-    </div>
-</section>
-
-<!-- ===== PROFIL ===== -->
-<section id="profil" class="section">
-    <h2>Profil Singkat</h2>
-    <hr>
-   <p>
-    Saya merupakan mahasiswa aktif di <strong>Universitas International Batam</strong>
-    yang memiliki minat di bidang teknologi informasi khususnya web development dan desain UI/UX. Saya senang belajar hal baru
-        dan mengembangkan kemampuan teknis maupun soft skill.
-</p>
-
-</section>
-
-<!-- ===== SKILL ===== -->
-<section id="skill" class="section">
-    <h2>Skill</h2>
+    <h2>My Skills</h2>
 
     <div class="skill">
         <span><b>HTML</b><b>55%</b></span>
@@ -251,53 +520,79 @@ footer{
             <div class="progress-bar" data-skill="55"></div>
         </div>
     </div>
-</section>
-
-<!-- ===== DATA DIRI ===== -->
-<section id="data" class="section">
-    <h2>Data Diri</h2>
-<table>
-    <thead>
-        <tr>
-            <th colspan="2">Informasi Mahasiswa</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td>NPM</td><td>2531182</td></tr>
-        <tr><td>Program Studi</td><td>Sistem Informasi</td></tr>
-        <tr><td>Fakultas</td><td>Ilmu Komputer</td></tr>
-        <tr><td>Universitas</td><td>Universitas International Batam</td></tr>
-        <tr><td>Tempat, Tanggal Lahir</td><td>Batam, 01 Juni 1996</td></tr>
-    </tbody>
-</table>
 
 </section>
 
-<!-- ===== KONTAK ===== -->
-<section id="kontak" class="section">
-    <h2>Kontak</h2>
-    <p>Email : aerachia777@gmail.com</p>
-    <p>Instagram : @blackhood.777</p>
+<section class="project-section">
+    <h2>My Projects</h2>
+
+    <div class="project-card">
+        <h3>Website Biodata</h3>
+        <p>Website sederhana menggunakan HTML, CSS, dan JavaScript.</p>
+    </div>
+
+    <div class="project-card">
+        <h3>UI Design App</h3>
+        <p>Design prototype aplikasi mobile menggunakan Figma.</p>
+    </div>
 </section>
 
-<footer>
-    <p><small>© 2026 Biodata Mahasiswa | Dibuat dengan ❤️ oleh Sherine</small></p>
-</footer>
+    <button onclick="goToHome()">Kembali</button>
+
+</div>
 
 <script>
-function keKontak(){
-    document.getElementById("kontak").scrollIntoView({
-        behavior: "smooth"
+function toggleDarkMode(){
+    document.body.classList.toggle("dark");
+
+    const icon = document.getElementById("darkIcon");
+
+    if(document.body.classList.contains("dark")){
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+        localStorage.setItem("theme","dark");
+    }else{
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+        localStorage.setItem("theme","light");
+    }
+}
+
+/* ===== LOAD THEME SAAT REFRESH ===== */
+window.onload = function(){
+    const savedTheme = localStorage.getItem("theme");
+    const icon = document.getElementById("darkIcon");
+
+    if(savedTheme === "dark"){
+        document.body.classList.add("dark");
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+    }
+};
+
+function goToBiodata(){
+    document.getElementById("homePage").classList.add("hidden");
+    document.getElementById("biodataPage").classList.remove("hidden");
+
+    // animasi progress bar
+    document.querySelectorAll(".progress-bar").forEach(bar=>{
+        bar.style.width = bar.dataset.skill + "%";
     });
 }
 
-/* Animasi progress bar */
-window.onload = () => {
-    document.querySelectorAll(".progress-bar").forEach(bar => {
-        bar.style.width = bar.dataset.skill + "%";
+function goToHome(){
+    document.getElementById("biodataPage").classList.add("hidden");
+    document.getElementById("homePage").classList.remove("hidden");
+
+    // reset progress bar
+    document.querySelectorAll(".progress-bar").forEach(bar=>{
+        bar.style.width = "0";
     });
-};
+}
 </script>
 
 </body>
 </html>
+
+
+
