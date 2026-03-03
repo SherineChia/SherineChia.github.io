@@ -8,6 +8,47 @@
 
 <style>
 
+/* ===== ANIME FLOATING EFFECT ===== */
+
+@keyframes floatUpDown {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+.card{
+    animation: fadeIn 1s ease, floatUpDown 4s ease-in-out infinite;
+}
+
+/* ===== GLOBAL ANIME BUBBLE ===== */
+
+.anime-bubble{
+    position: fixed;
+    bottom: -50px;
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle, #fff, #d4a373);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: bubbleMove linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes bubbleMove{
+    0%{
+        transform: translateY(0) scale(0.5);
+        opacity:0;
+    }
+    20%{
+        opacity:0.7;
+    }
+    100%{
+        transform: translateY(-120vh) scale(1);
+        opacity:0;
+    }
+}
+
 /* ===== GOLD LUXURY UNTUK HALAMAN 1 ===== */
 
 #homePage{
@@ -417,6 +458,14 @@ body, .card, .table-card, .skill-section, .project-card, td, footer {
 
 <body>
 
+<div id="bubbleContainer"></div>
+
+<div class="anime-bubble" style="left:10%; animation-delay:0s;"></div>
+<div class="anime-bubble" style="left:25%; animation-delay:3s;"></div>
+<div class="anime-bubble" style="left:50%; animation-delay:6s;"></div>
+<div class="anime-bubble" style="left:70%; animation-delay:2s;"></div>
+<div class="anime-bubble" style="left:85%; animation-delay:4s;"></div>
+
     <button class="dark-toggle" onclick="toggleDarkMode()">
     <i id="darkIcon" class="fa-solid fa-moon"></i>
 </button>
@@ -589,6 +638,27 @@ function goToHome(){
         bar.style.width = "0";
     });
 }
+
+/* ===== AUTO BUBBLE GENERATOR ===== */
+
+function createBubble(){
+    const bubble = document.createElement("div");
+    bubble.classList.add("anime-bubble");
+
+    bubble.style.left = Math.random() * 100 + "vw";
+    bubble.style.animationDuration = (6 + Math.random() * 6) + "s";
+    bubble.style.width = (10 + Math.random() * 20) + "px";
+    bubble.style.height = bubble.style.width;
+
+    document.getElementById("bubbleContainer").appendChild(bubble);
+
+    setTimeout(()=>{
+        bubble.remove();
+    },12000);
+}
+
+setInterval(createBubble, 800);
+
 </script>
 
 </body>
