@@ -10,6 +10,47 @@
 
 <style>
 
+/* POPUP BACKGROUND */
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    pointer-events:none;
+    transition:0.3s;
+    z-index:9999;
+}
+
+/* AKTIF */
+.popup.active{
+    opacity:1;
+    pointer-events:auto;
+}
+
+/* GAMBAR */
+.popup img{
+    max-width:80%;
+    max-height:80%;
+    border-radius:10px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.5);
+    animation:zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn{
+    from{transform:scale(0.7);}
+    to{transform:scale(1);}
+}
+
+.popup{
+    backdrop-filter:blur(5px);
+}
+
 .polaroid{
     background:#fff;
     border:1px solid rgba(0,0,0,0.05);
@@ -117,19 +158,19 @@ body.dark .quick-info{
 }
 
 .mini-about img{
-    width:70px;
-    height:70px;
+    width:220px;
+    height:220px;
     border-radius:50%;
     object-fit:cover;
     margin-bottom:8px;
 }
 
 .mini-about h5{
-    font-size:14px;
+    font-size:30px;
 }
 
 .mini-about p{
-    font-size:12px;
+    font-size:18px;
     color:#777;
 }
 
@@ -316,7 +357,7 @@ body.dark .project-card p{
 
 .polaroid-group{
     display:flex;
-    gap:30px; /* BESARIN JARAK */
+    gap:40px; /* BESARIN JARAK */
     flex-wrap:wrap;
     align-items:flex-start;
 }
@@ -374,7 +415,7 @@ body.dark .project-card p{
 
 /* ukuran kecil */
 .polaroid.small{
-    width:90px;
+    width:145px;
     padding:6px 6px 16px;
 }
 
@@ -817,7 +858,7 @@ body.dark .cursor{
 .about-section{
     display:flex;
     gap:20px;
-    align-items:flex-start;
+    align-items:center;
     margin-top:15px;
 }
 
@@ -1020,18 +1061,34 @@ body.dark{
     }
 }
 
+.polaroid img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.polaroid:hover{
+    transform:scale(1.1) rotate(0deg);
+}
+
 /* POLAROID BASE */
 .polaroid{
-    width:120px;
+    width: clamp(100px, 25vw, 160px);
     background:#fff;
     padding:8px 8px 22px;
-    border-radius:6px;
+    border-radius:8px;
     box-shadow:0 10px 25px rgba(0,0,0,0.2);
     transform:rotate(-6deg);
     transition:all 0.4s ease;
     cursor:pointer;
     flex-shrink:0;
     position:relative;
+}
+
+.polaroid img{
+    width:100%;
+    height: clamp(130px, 20vw, 150px);
+    object-fit: cover;
 }
 
 /* IMAGE */
@@ -1097,8 +1154,8 @@ background-attachment:fixed;
 /* ===== ANIMATED BACKGROUND ===== */
 body{
     background:
-        linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
-        url("https://images.unsplash.com/photo-1523419409543-a5e549c1b8b4");
+        linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88)),
+        url("https://images.unsplash.com/photo-1519710164239-da123dc03ef4");
 
     background-size:cover;
     background-position:center;
@@ -1115,7 +1172,7 @@ body{
 body.dark{
     background:
         linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-        url("https://images.unsplash.com/photo-1523419409543-a5e549c1b8b4");
+        url("https://images.unsplash.com/photo-1519710164239-da123dc03ef4");
 
     background-size:cover;
     background-position:center;
@@ -1202,6 +1259,70 @@ body.dark .card *{
 
 color: #111 !important;
 
+/* GLOBAL FONT SIZE (PROYECTOR MODE) */
+body{
+    font-size:16px;
+}
+
+@media (min-width:1200px){
+    body{
+        font-size:18px;
+    }
+}
+
+/* JUDUL */
+h1{ font-size:50px !important; }
+h2{ font-size:40px !important; }
+h3{ font-size:25px !important; }
+h4{ font-size:25px !important; }
+h5{ font-size:25px !important; }
+
+/* PARAGRAF */
+p{
+    font-size:18px !important;
+    line-height:1.8;
+}
+
+/* TEXT KECIL DI BESARKAN */
+small, span{
+    font-size:18px !important;
+}
+
+/* NAVBAR */
+.navbar h2{
+    font-size:25px !important;
+}
+
+/* BUTTON */
+.cta a{
+    font-size:18px;
+    padding:10px 18px;
+}
+
+/* TABLE */
+.bio-table{
+    font-size:18px;
+}
+
+/* CONTACT LINK */
+.contact a{
+    font-size:18px;
+}
+
+/* SKILL TEXT */
+.skill span{
+    font-size:16px;
+}
+
+/* PROJECT TEXT */
+.project-card h5{
+    font-size:18px !important;
+}
+
+.project-card p{
+    font-size:16px !important;
+}
+
 </style>
 </head>
 
@@ -1224,7 +1345,7 @@ color: #111 !important;
 <div class="hero">
 
     <h1>Sherine</h1>
-    <p>Storyteller | Freelancer | Creative Thinker</p>
+    <p>Sweet | Charming | Pleasant</p>
 </div>
 
 <!-- CONTENT -->
@@ -1238,9 +1359,9 @@ color: #111 !important;
     <!-- STATUS -->
 
     <div class="mini-about">
-        <img src="foto1.jpeg">
+        <img src="foto1.jpeg" alt="Foto Sherine">
         <h5>Sherine</h5>
-        <p>UI Designer & Storyteller</p>
+        <p>Storyteller | Substitute Teacher | Creative thinker</p>
     </div>
 
     <div class="status">
@@ -1261,36 +1382,10 @@ color: #111 !important;
 
     <div class="divider"></div>
 
-    <!-- CONNECT -->
-    <div class="contact">
-        <h4>CONNECT</h4>
-
-        <a href="https://web.facebook.com/" target="_blank">
-            <i class="fab fa-facebook-f"></i> Facebook
-        </a>
-
-        <a href="https://www.instagram.com/" target="_blank">
-            <i class="fab fa-instagram"></i> Instagram
-        </a>
-
-        <a href="https://mail.google.com/mail/u/0/#inbox/" target="_blank">
-            <i class="fas fa-envelope"></i> Email
-        </a>
-        
-        <a href="https://github.com/SherineChia/SherineChia.github.io" target="_blank">
-            <i class="fas fa-github"></i> Github
-        </a>
-
-        <a href="wireframe.pdf" target="_blank">
-            <i class="fas fa-file-pdf"></i> Wireframe
-        </a>
-
-    </div>
-
-    <div class="divider"></div>
+    
 
     <!-- PROJECT -->
-    <h4 style="color:#888; font-size:12px;">PROJECTS</h4>
+    <h4 style="color:#888; font-size:16px;">PROJECTS</h4>
 
     <div class="project-card">
         <h5>Website Portfolio</h5>
@@ -1319,6 +1414,34 @@ color: #111 !important;
         </p>
 
     </div>
+
+    <!-- CONNECT -->
+    <div class="contact">
+        <h4>CONNECT</h4>
+
+        <a href="https://web.facebook.com/" target="_blank">
+            <i class="fab fa-facebook-f"></i> Facebook
+        </a>
+
+        <a href="https://www.instagram.com/" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+
+        <a href="https://mail.google.com/mail/u/0/#inbox/" target="_blank">
+            <i class="fas fa-envelope"></i> Email
+        </a>
+        
+        <a href="https://github.com/SherineChia/SherineChia.github.io" target="_blank">
+            <i class="fas fa-github"></i> Github
+        </a>
+
+        <a href="wireframe.pdf" target="_blank">
+            <i class="fas fa-file-pdf"></i> Wireframe
+        </a>
+
+    </div>
+
+    <div class="divider"></div>
 
     <div class="cta">
     <a href="mailto:aerachia777@gmail.com">Hire Me</a>
@@ -1430,7 +1553,6 @@ color: #111 !important;
             <div class="polaroid small"><img src="ikan asin.png"></div>
             <div class="polaroid small rotate-right"><img src="es krim.png"></div>
             <div class="polaroid small rotate-left"><img src="garret.png"></div>
-            <div class="polaroid small"><img src="bihun siram.png"></div>
         </div>
     </div>
 
@@ -1441,7 +1563,6 @@ color: #111 !important;
             <div class="polaroid small"><img src="ding tea.png"></div>
             <div class="polaroid small rotate-right"><img src="man man.png"></div>
             <div class="polaroid small rotate-left"><img src="teh obeng.png"></div>
-            <div class="polaroid small rotate-right"><img src="es jeruk.png"></div>
         </div>
     </div>
 
@@ -1450,7 +1571,6 @@ color: #111 !important;
         <h4>🎬 Favorite Movie/Anime</h4>
         <div class="polaroid-group">
             <div class="polaroid small"><img src="AOT.png"></div>
-            <div class="polaroid small rotate-left"><img src="avatar.png"></div>
             <div class="polaroid small rotate-right"><img src="spirited away.png"></div>
             <div class="polaroid small"><img src="3 idiots.png"></div>
         </div>
@@ -1483,6 +1603,20 @@ color: #111 !important;
     <br>
 
 <div class="divider"></div>
+
+        <h4 style="color:#888; font-size:12px;">TOOLS</h4>
+
+    <div class="service-mini">
+        <i class="fas fa-pencil-ruler"></i>
+        <span>Figma</span>
+    </div>
+
+    <div class="service-mini">
+        <i class="fas fa-laptop-code"></i>
+        <span>Sublime Text</span>
+    </div>
+
+    <div class="divider"></div>
 
     <!-- SKILL -->
     <h4 style="color:#888; font-size:12px; letter-spacing:1px;">MY SKILLS</h4>
@@ -1577,12 +1711,25 @@ color: #111 !important;
         <small>2025 - Present</small>
     </div>
 
+<div class="divider"></div>
+
 <h3>Experience</h3>
 <div class="edu">
     <b>Hanna Filia</b>
     <span>Admin & Substitute Teacher</span>
     <small>2025 - Present</small>
 </div>
+
+<div class="divider"></div>
+
+        <h4 style="color:#888; font-size:12px;">ACHIEVEMENT</h4>
+
+    <div class="edu">
+        <b>Portfolio Website</b>
+        <span>Self Project</span>
+        <small>2026</small>
+    </div>
+
 
 </div>
 
@@ -1593,68 +1740,53 @@ color: #111 !important;
 </div>
 
 <script>
-
-const cardsSwipe = document.querySelectorAll(".card-swipe");
-
-cardsSwipe.forEach(card=>{
-    let isDragging = false;
-    let startX = 0;
-
-    card.addEventListener("mousedown", (e)=>{
-        isDragging = true;
-        startX = e.clientX;
-    });
-
-    document.addEventListener("mousemove", (e)=>{
-        if(!isDragging) return;
-
-        let moveX = e.clientX - startX;
-        card.style.transform = `translateX(${moveX}px) rotate(${moveX*0.05}deg)`;
-    });
-
-    document.addEventListener("mouseup", (e)=>{
-        if(!isDragging) return;
-        isDragging = false;
-
-        let moveX = e.clientX - startX;
-
-        if(Math.abs(moveX) > 100){
-            card.style.transform = `translateX(${moveX > 0 ? 500 : -500}px) rotate(${moveX*0.1}deg)`;
-            setTimeout(()=>{
-                card.remove();
-            },300);
-        }else{
-            card.style.transform = "";
-        }
-    });
-});
-
 window.addEventListener("scroll", ()=>{
     let scroll = window.scrollY;
     let height = document.body.scrollHeight - window.innerHeight;
-    let progress = (scroll / height) * 100;
 
-    document.querySelector(".progress-scroll").style.width = progress + "%";
-});
+    // progress bar
+    document.querySelector(".progress-scroll").style.width = (scroll/height)*100 + "%";
 
-document.querySelectorAll(".polaroid").forEach(img=>{
-    img.addEventListener("click", ()=>{
-        alert("Hi! This is part of my journey ✨");
-    });
-});
-
-/* SKILL ANIMATION */
-const skills = document.querySelectorAll(".progress-bar");
-
-window.addEventListener("scroll", ()=>{
-    skills.forEach(bar=>{
+    // skill animation
+    document.querySelectorAll(".progress-bar").forEach(bar=>{
         const top = bar.getBoundingClientRect().top;
         if(top < window.innerHeight - 50){
-            bar.style.width = bar.getAttribute("data-skill") + "%";
+            bar.style.width = bar.dataset.skill + "%";
+        }
+    });
+
+    // about animation
+    document.querySelectorAll(".about-section").forEach(sec=>{
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            sec.classList.add("show");
+        }
+    });
+
+    // card animation
+    document.querySelectorAll(".card").forEach(card=>{
+        const top = card.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            card.classList.add("show");
         }
     });
 });
 
+// glow effect
+const glow = document.querySelector(".glow");
+document.addEventListener("mousemove", (e)=>{
+    glow.style.top = e.clientY + "px";
+    glow.style.left = e.clientX + "px";
+});
+
+// cursor
+const cursor = document.querySelector(".cursor");
+document.addEventListener("mousemove", (e)=>{
+    cursor.style.top = e.clientY + "px";
+    cursor.style.left = e.clientX + "px";
+});
+
+// button hover
 document.querySelectorAll(".cta a").forEach(btn=>{
     btn.addEventListener("mousemove", (e)=>{
         const rect = btn.getBoundingClientRect();
@@ -1669,58 +1801,32 @@ document.querySelectorAll(".cta a").forEach(btn=>{
     });
 });
 
-const glow = document.querySelector(".glow");
-
-document.addEventListener("mousemove", (e)=>{
-    glow.style.top = e.clientY + "px";
-    glow.style.left = e.clientX + "px";
-});
-
-window.addEventListener("scroll", ()=>{
-    document.querySelectorAll(".card").forEach(card=>{
-        let speed = 0.03;
-        let y = window.scrollY * speed;
-        card.style.transform = `translateY(${y}px)`;
-    });
-});
-
-const cursor = document.querySelector(".cursor");
-
-document.addEventListener("mousemove", (e)=>{
-    cursor.style.top = e.clientY + "px";
-    cursor.style.left = e.clientX + "px";
-});
-
-/* ANIMATION FOR ABOUT SECTION */
-const abouts = document.querySelectorAll(".about-section");
-
-window.addEventListener("scroll", ()=>{
-    abouts.forEach(sec=>{
-        const top = sec.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            sec.classList.add("show");
-        }
-    });
-});
-
-/* DARK MODE */
+// dark mode
 function toggleDark(){
     document.body.classList.toggle("dark");
 }
 
-/* SCROLL ANIMATION */
-const cards = document.querySelectorAll(".card");
+// popup
+window.addEventListener("DOMContentLoaded", ()=>{
+    const popup = document.getElementById("popup");
+    const popupImg = document.getElementById("popup-img");
 
-window.addEventListener("scroll", ()=>{
-    cards.forEach(card=>{
-        const top = card.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            card.classList.add("show");
-        }
+    document.querySelectorAll(".polaroid img").forEach(img=>{
+        img.addEventListener("click", ()=>{
+            popup.classList.add("active");
+            popupImg.src = img.src;
+        });
+    });
+
+    popup.addEventListener("click", ()=>{
+        popup.classList.remove("active");
     });
 });
-
 </script>
+
+<div class="popup" id="popup">
+    <img id="popup-img">
+</div>
 
 </body>
 </html>
